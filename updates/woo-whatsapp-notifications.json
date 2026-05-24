@@ -1,15 +1,15 @@
 {
   "name": "Woo WhatsApp Notifications",
   "slug": "woo-whatsapp-notifications",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "Codex",
   "homepage": "https://github.com/egalvani/Psiloshop",
   "requires": "6.0",
   "tested": "6.8",
   "requires_php": "7.4",
-  "download_url": "https://github.com/egalvani/Psiloshop-updates/releases/download/woo-whatsapp-notifications-1.0.1/woo-whatsapp-notifications-1.0.1.zip",
+  "download_url": "https://github.com/egalvani/Psiloshop-updates/releases/download/woo-whatsapp-notifications-1.0.2/woo-whatsapp-notifications-1.0.2.zip",
   "sections": {
     "description": "Notificacoes WhatsApp para WooCommerce com templates editaveis e arquitetura preparada para Meta WhatsApp Cloud API.",
-    "changelog": "Adiciona modos Cloud API, link manual seguro, preparar mensagem e opt-in no checkout."
+    "changelog": "Move o menu do plugin para dentro do menu PSILOSHOP."
   }
 }
