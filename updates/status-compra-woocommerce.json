@@ -1,0 +1,15 @@
+{
+  "name": "Status da Compra para WooCommerce",
+  "slug": "status-compra-woocommerce",
+  "version": "1.0.12",
+  "author": "Codex",
+  "homepage": "https://github.com/egalvani/Psiloshop",
+  "requires": "6.0",
+  "tested": "6.8",
+  "requires_php": "7.4",
+  "download_url": "https://github.com/egalvani/Psiloshop-updates/releases/download/status-compra-woocommerce-1.0.12/status-compra-woocommerce-1.0.12.zip",
+  "sections": {
+    "description": "Consulta publica de pedidos WooCommerce por nome, CPF, email ou numero do pedido, com status e rastreamento.",
+    "changelog": "Moves update checks to the public Psiloshop-updates repository."
+  }
+}

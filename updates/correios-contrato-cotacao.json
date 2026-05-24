@@ -1,0 +1,15 @@
+{
+  "name": "Cotacao Correios Contrato",
+  "slug": "correios-contrato-cotacao",
+  "version": "1.1.2",
+  "author": "Codex",
+  "homepage": "https://github.com/egalvani/Psiloshop",
+  "requires": "6.0",
+  "tested": "6.8",
+  "requires_php": "7.4",
+  "download_url": "https://github.com/egalvani/Psiloshop-updates/releases/download/correios-contrato-cotacao-1.1.2/correios-contrato-cotacao-1.1.2.zip",
+  "sections": {
+    "description": "Exibe uma cotacao publica de frete usando a API dos Correios com contrato/cartao de postagem.",
+    "changelog": "Moves update checks to the public Psiloshop-updates repository."
+  }
+}
