@@ -1,15 +1,15 @@
 {
   "name": "Woo WhatsApp Notifications",
   "slug": "woo-whatsapp-notifications",
-  "version": "1.0.21",
+  "version": "1.0.22",
   "author": "Codex",
   "homepage": "https://github.com/egalvani/Psiloshop",
   "requires": "6.0",
   "tested": "6.8",
   "requires_php": "7.4",
-  "download_url": "https://github.com/egalvani/Psiloshop-updates/releases/download/woo-whatsapp-notifications-1.0.21/woo-whatsapp-notifications-1.0.21.zip",
+  "download_url": "https://github.com/egalvani/Psiloshop-updates/releases/download/woo-whatsapp-notifications-1.0.22/woo-whatsapp-notifications-1.0.22.zip",
   "sections": {
     "description": "Notificacoes WhatsApp para WooCommerce com templates editaveis e integracoes Meta Cloud API e Jimmy Chat.",
-    "changelog": "Faz a IA priorizar a Base Atendimento antes da resposta fixa sobre cogumelos medicinais e melhora a busca por produtos/catalogo."
+    "changelog": "Adiciona aprendizado assistido da IA via Jimmy: perguntas sem resposta viram contexto e respostas humanas entram como sugestoes revisaveis antes de alimentar a Base Atendimento."
   }
 }
