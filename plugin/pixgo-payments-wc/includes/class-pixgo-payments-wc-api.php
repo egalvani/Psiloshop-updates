@@ -76,7 +76,7 @@ class Pixgo_Payments_WC_API {
 
 		$args = array(
 			'method'      => $method,
-			'timeout'     => 30,
+			'timeout'     => 15,
 			'redirection' => 0,
 			'headers'     => array(
 				'Accept'       => 'application/json',

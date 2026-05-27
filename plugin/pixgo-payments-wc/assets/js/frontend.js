@@ -1,4 +1,52 @@
 (function () {
+	function startPixgoCheckoutGuard() {
+		var checkoutForm = document.querySelector('form.checkout');
+
+		if (!checkoutForm) {
+			return;
+		}
+
+		function isPixgoSelected() {
+			var selected = document.querySelector('input[name="payment_method"]:checked');
+			return selected && 'pixgo_payments_wc' === selected.value;
+		}
+
+		function clearLeaveWarning() {
+			window.onbeforeunload = null;
+
+			if (window.jQuery) {
+				jQuery(window).off('beforeunload');
+			}
+		}
+
+		function markPixgoSubmitting() {
+			if (isPixgoSelected()) {
+				document.documentElement.classList.add('pixgo-payments-wc-submitting');
+				clearLeaveWarning();
+			}
+		}
+
+		document.addEventListener('click', function (event) {
+			if (event.target.closest('#place_order')) {
+				markPixgoSubmitting();
+			}
+		}, true);
+
+		checkoutForm.addEventListener('submit', markPixgoSubmitting, true);
+
+		window.addEventListener('beforeunload', function (event) {
+			if (!document.documentElement.classList.contains('pixgo-payments-wc-submitting')) {
+				return;
+			}
+
+			clearLeaveWarning();
+			event.stopImmediatePropagation();
+			delete event.returnValue;
+		}, true);
+	}
+
+	startPixgoCheckoutGuard();
+
 	function startPixgoPolling() {
 		var poller = document.querySelector('.pixgo-payments-wc-poller');
 

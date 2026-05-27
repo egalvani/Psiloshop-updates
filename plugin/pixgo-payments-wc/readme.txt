@@ -3,12 +3,16 @@ Contributors: pixgo
 Tags: woocommerce, pix, payments, pixgo
 Requires at least: 6.0
 Requires PHP: 7.4
-Stable tag: 1.1.9
+Stable tag: 1.1.10
 License: GPLv2 or later
 
 Gateway PIX PixGo para WooCommerce.
 
 == Changelog ==
+
+= 1.1.10 =
+* Reduces PixGo API wait time during checkout.
+* Prevents the browser leave-site warning while PixGo checkout is redirecting.
 
 = 1.1.9 =
 * Adds an editable PIX safety modal for bank false-positive alerts.

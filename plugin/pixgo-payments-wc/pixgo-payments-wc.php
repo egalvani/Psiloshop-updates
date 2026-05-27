@@ -3,7 +3,7 @@
  * Plugin Name: PixGo Payments WC
  * Plugin URI: https://pixgo.org/
  * Description: PixGo PIX gateway for WooCommerce with QR Code, copy and paste code, and signed webhooks.
- * Version: 1.1.9
+ * Version: 1.1.10
  * Author: PixGo Integration
  * Requires at least: 6.0
  * Requires PHP: 7.4
@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'PIXGO_PAYMENTS_WC_VERSION', '1.1.9' );
+define( 'PIXGO_PAYMENTS_WC_VERSION', '1.1.10' );
 define( 'PIXGO_PAYMENTS_WC_FILE', __FILE__ );
 define( 'PIXGO_PAYMENTS_WC_PATH', plugin_dir_path( __FILE__ ) );
 define( 'PIXGO_PAYMENTS_WC_URL', plugin_dir_url( __FILE__ ) );
@@ -387,8 +387,11 @@ function pixgo_payments_wc_incomplete_install_notice() {
 function pixgo_payments_wc_frontend_assets() {
 	$template_id      = absint( get_option( 'pixgo_payments_wc_template_page_id', 0 ) );
 	$is_template_page = $template_id && function_exists( 'is_page' ) && is_page( $template_id );
+	$is_checkout_page = function_exists( 'is_checkout' ) && is_checkout();
+	$is_order_page    = function_exists( 'is_order_received_page' ) && is_order_received_page();
+	$is_view_order    = function_exists( 'is_view_order_page' ) && is_view_order_page();
 
-	if ( function_exists( 'is_order_received_page' ) && ( is_order_received_page() || is_view_order_page() || $is_template_page ) ) {
+	if ( $is_checkout_page || $is_order_page || $is_view_order || $is_template_page ) {
 		wp_enqueue_style( 'pixgo-payments-wc', PIXGO_PAYMENTS_WC_URL . 'assets/css/frontend.css', array(), PIXGO_PAYMENTS_WC_VERSION );
 		wp_enqueue_script( 'pixgo-payments-wc', PIXGO_PAYMENTS_WC_URL . 'assets/js/frontend.js', array(), PIXGO_PAYMENTS_WC_VERSION, true );
 		wp_localize_script(
