@@ -1,0 +1,53 @@
+.pixgo-payments-wc-setup .pixgo-payments-wc-panel {
+	max-width: 780px;
+	margin-top: 18px;
+}
+
+.pixgo-payments-wc-setup .nav-tab-wrapper {
+	margin-top: 18px;
+}
+
+.pixgo-payments-wc-setup code {
+	display: inline-block;
+	margin: 4px 4px 4px 0;
+}
+
+.pixgo-payments-wc-code {
+	display: inline-block;
+	max-width: 100%;
+	padding: 8px 10px;
+	border: 1px solid #d0d7de;
+	border-radius: 6px;
+	background: #f6f8fa;
+	word-break: break-all;
+}
+
+.pixgo-payments-wc-alert-preview {
+	box-sizing: border-box;
+	max-width: 560px;
+	margin-top: 20px;
+	padding: 20px;
+	border: 1px solid #d0d7de;
+	border-radius: 8px;
+	background: #fff;
+	box-shadow: 0 8px 22px rgba(31, 41, 55, 0.08);
+}
+
+.pixgo-payments-wc-alert-preview h3 {
+	margin: 0 0 10px;
+	font-size: 20px;
+	line-height: 1.25;
+}
+
+.pixgo-payments-wc-alert-preview p {
+	max-width: 62ch;
+	margin: 0 0 14px;
+	line-height: 1.55;
+}
+
+.pixgo-payments-wc-preview-label {
+	color: #0d8064;
+	font-size: 12px;
+	font-weight: 700;
+	text-transform: uppercase;
+}

@@ -1,0 +1,294 @@
+.pixgo-payments-wc-payment,
+.pixgo-payments-wc-template-card {
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 980px;
+	color: #17231f;
+}
+
+.pixgo-payments-wc-payment {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(210px, 270px);
+	gap: 26px;
+	align-items: stretch;
+	margin: 30px 0 34px;
+	padding: 26px;
+	border: 1px solid #cddbd6;
+	border-radius: 8px;
+	background: linear-gradient(135deg, #f8fffc 0%, #eef8f4 58%, #f7fbff 100%);
+	box-shadow: 0 16px 36px rgba(21, 45, 37, 0.1);
+	overflow: hidden;
+}
+
+.pixgo-payments-wc-template {
+	box-sizing: border-box;
+	width: 100%;
+	margin: 30px 0 34px;
+}
+
+.pixgo-payments-wc-template-card {
+	padding: 26px;
+	border: 1px solid #cddbd6;
+	border-radius: 8px;
+	background: #f8fffc;
+	box-shadow: 0 12px 28px rgba(21, 45, 37, 0.08);
+}
+
+.pixgo-payments-wc-template-card h2,
+.pixgo-payments-wc-payment h2 {
+	margin: 0 0 10px;
+	color: #17231f;
+	font-size: 28px;
+	line-height: 1.18;
+	letter-spacing: 0;
+}
+
+.pixgo-payments-wc-template-card p,
+.pixgo-payments-wc-payment p {
+	line-height: 1.55;
+}
+
+.pixgo-payments-wc-template-qr,
+.pixgo-payments-wc-qr {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 18px;
+	border: 1px solid #d7e4df;
+	border-radius: 8px;
+	background: #ffffff;
+	box-shadow: inset 0 0 0 6px #f4faf7;
+}
+
+.pixgo-payments-wc-template-qr {
+	min-height: 240px;
+}
+
+.pixgo-payments-wc-template-qr img,
+.pixgo-payments-wc-qr img {
+	display: block;
+	width: 100%;
+	max-width: 220px;
+	height: auto;
+}
+
+.pixgo-payments-wc-template-placeholder {
+	color: #52655f;
+	font-weight: 700;
+	text-align: center;
+}
+
+.pixgo-payments-wc-poller {
+	display: none !important;
+}
+
+.pixgo-payments-wc-copy {
+	min-width: 0;
+}
+
+.pixgo-payments-wc-kicker,
+.pixgo-payments-wc-approved-kicker,
+.pixgo-payments-wc-modal-kicker {
+	margin: 0 0 7px;
+	color: #0d8064;
+	font-size: 12px;
+	font-weight: 800;
+	letter-spacing: 0;
+	text-transform: uppercase;
+}
+
+.pixgo-payments-wc-status-text {
+	max-width: 66ch;
+	margin: 0;
+	color: #3f514c;
+}
+
+.pixgo-payments-wc-steps {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin: 18px 0 4px;
+}
+
+.pixgo-payments-wc-steps span {
+	display: inline-flex;
+	align-items: center;
+	min-height: 34px;
+	padding: 0 11px;
+	border: 1px solid #c7dcd4;
+	border-radius: 6px;
+	background: #ffffff;
+	color: #243c35;
+	font-size: 13px;
+	font-weight: 700;
+}
+
+.pixgo-payments-wc-payment label {
+	display: block;
+	margin: 18px 0 7px;
+	font-weight: 800;
+	color: #21362f;
+}
+
+.pixgo-payments-wc-payment textarea,
+.pixgo-payments-wc-template-code {
+	box-sizing: border-box;
+	display: block;
+	width: 100%;
+	min-height: 104px;
+	max-width: 100%;
+	padding: 13px;
+	border: 1px solid #bdcdc8;
+	border-radius: 8px;
+	background: #ffffff;
+	color: #17231f;
+	font-family: Consolas, Monaco, monospace;
+	font-size: 13px;
+	line-height: 1.5;
+	resize: vertical;
+	overflow-wrap: anywhere;
+	box-shadow: inset 0 1px 2px rgba(23, 35, 31, 0.06);
+}
+
+.pixgo-payments-wc-button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 44px;
+	margin-top: 12px;
+	padding: 0 18px;
+	border-radius: 6px;
+	border: 1px solid #0b7058;
+	background: #0d8064;
+	color: #ffffff;
+	font-weight: 800;
+	white-space: normal;
+	text-align: center;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.pixgo-payments-wc-button:hover,
+.pixgo-payments-wc-button:focus {
+	background: #095f4b;
+	color: #ffffff;
+}
+
+.pixgo-payments-wc-approved {
+	margin-top: 20px;
+	padding: 18px;
+	border: 1px solid #a8dcbf;
+	border-radius: 8px;
+	background: #eefbf4;
+	color: #173b2e;
+	box-shadow: 0 8px 20px rgba(31, 116, 77, 0.08);
+}
+
+.pixgo-payments-wc-approved[hidden] {
+	display: none;
+}
+
+.pixgo-payments-wc-approved h3 {
+	margin: 0 0 8px;
+	color: #173b2e;
+	font-size: 21px;
+	line-height: 1.25;
+}
+
+.pixgo-payments-wc-approved p {
+	margin: 0 0 8px;
+}
+
+.pixgo-payments-wc-approved-note {
+	font-weight: 800;
+}
+
+.pixgo-payments-wc-qr {
+	min-height: 100%;
+}
+
+.pixgo-payments-wc-modal[hidden] {
+	display: none;
+}
+
+.pixgo-payments-wc-modal {
+	position: fixed;
+	z-index: 999999;
+	inset: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 18px;
+}
+
+.pixgo-payments-wc-modal-backdrop {
+	position: absolute;
+	inset: 0;
+	background: rgba(10, 22, 19, 0.56);
+}
+
+.pixgo-payments-wc-modal-dialog {
+	position: relative;
+	box-sizing: border-box;
+	width: min(100%, 520px);
+	padding: 26px;
+	border: 1px solid #cfe0dc;
+	border-radius: 8px;
+	background: #ffffff;
+	color: #17231f;
+	box-shadow: 0 26px 70px rgba(0, 0, 0, 0.28);
+	outline: none;
+}
+
+.pixgo-payments-wc-modal-dialog h2 {
+	margin: 0 0 12px;
+	color: #17231f;
+	font-size: 24px;
+	line-height: 1.2;
+	letter-spacing: 0;
+}
+
+.pixgo-payments-wc-modal-dialog p {
+	margin: 0 0 16px;
+	color: #3b4f49;
+	font-size: 16px;
+	line-height: 1.58;
+}
+
+.pixgo-payments-wc-modal-button {
+	width: 100%;
+}
+
+.pixgo-payments-wc-modal-open {
+	overflow: hidden;
+}
+
+@media (max-width: 720px) {
+	.pixgo-payments-wc-payment {
+		grid-template-columns: 1fr;
+		padding: 20px;
+	}
+
+	.pixgo-payments-wc-template-card {
+		padding: 20px;
+	}
+
+	.pixgo-payments-wc-template-card h2,
+	.pixgo-payments-wc-payment h2 {
+		font-size: 24px;
+	}
+
+	.pixgo-payments-wc-qr {
+		order: -1;
+		max-width: 260px;
+		min-height: 0;
+		margin: 0 auto;
+	}
+
+	.pixgo-payments-wc-steps {
+		display: grid;
+		grid-template-columns: 1fr;
+	}
+}
