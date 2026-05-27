@@ -3,7 +3,7 @@
  * Plugin Name: PixGo Payments WC
  * Plugin URI: https://pixgo.org/
  * Description: PixGo PIX gateway for WooCommerce with QR Code, copy and paste code, and signed webhooks.
- * Version: 1.1.8
+ * Version: 1.1.9
  * Author: PixGo Integration
  * Requires at least: 6.0
  * Requires PHP: 7.4
@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'PIXGO_PAYMENTS_WC_VERSION', '1.1.8' );
+define( 'PIXGO_PAYMENTS_WC_VERSION', '1.1.9' );
 define( 'PIXGO_PAYMENTS_WC_FILE', __FILE__ );
 define( 'PIXGO_PAYMENTS_WC_PATH', plugin_dir_path( __FILE__ ) );
 define( 'PIXGO_PAYMENTS_WC_URL', plugin_dir_url( __FILE__ ) );

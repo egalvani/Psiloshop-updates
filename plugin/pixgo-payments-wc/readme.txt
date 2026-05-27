@@ -3,14 +3,14 @@ Contributors: pixgo
 Tags: woocommerce, pix, payments, pixgo
 Requires at least: 6.0
 Requires PHP: 7.4
-Stable tag: 1.1.8
+Stable tag: 1.1.9
 License: GPLv2 or later
 
 Gateway PIX PixGo para WooCommerce.
 
 == Changelog ==
 
-= 1.1.8 =
+= 1.1.9 =
 * Adds an editable PIX safety modal for bank false-positive alerts.
 * Extends PixGo payment expiration payload to 30 minutes.
 * Refreshes QR Code and thank-you payment UI.
