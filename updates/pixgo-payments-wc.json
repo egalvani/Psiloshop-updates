@@ -1,14 +1,14 @@
 {
     "slug":  "pixgo-payments-wc",
     "tested":  "6.8",
-    "version":  "1.1.7",
+    "version":  "1.1.8",
     "requires_php":  "7.4",
     "author":  "PixGo Integration",
-    "download_url":  "https://github.com/egalvani/Psiloshop-updates/releases/download/pixgo-payments-wc-1.1.7/pixgo-payments-wc-1.1.7.zip",
+    "download_url":  "https://github.com/egalvani/Psiloshop-updates/releases/download/pixgo-payments-wc-1.1.8/pixgo-payments-wc-1.1.8.zip",
     "name":  "PixGo Payments WC",
     "homepage":  "https://github.com/egalvani/Psiloshop",
     "sections":  {
-                     "changelog":  "Adiciona modal editavel para alerta preventivo de bancos digitais, amplia o pagamento PIX para 30 minutos e melhora a interface da tela de QR Code e obrigado.",
+                     "changelog":  "Forca uma atualizacao limpa com modal editavel para alerta preventivo de bancos digitais, pagamento PIX por 30 minutos e melhorias visuais da tela de QR Code e obrigado.",
                      "description":  "PixGo PIX gateway for WooCommerce with QR Code, copy and paste code, signed webhooks, editable PIX alert modal and automatic updates."
                  },
     "requires":  "6.0"
