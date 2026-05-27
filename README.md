@@ -13,14 +13,14 @@ Workspace importado do projeto PixGo para WooCommerce.
 ## Versao ativa
 
 Plugin: PixGo Payments WC  
-Versao: 1.1.3  
-Arquivo instalavel: `packages/pixgo-payments-wc-1.1.3.zip`
+Versao: 1.1.7  
+Arquivo instalavel: `packages/pixgo-payments-wc-1.1.7.zip`
 
 ## Instalacao rapida
 
 1. No WordPress, abra `Plugins > Adicionar novo > Enviar plugin`.
-2. Envie `packages/pixgo-payments-wc-1.1.3.zip`.
+2. Envie `packages/pixgo-payments-wc-1.1.7.zip`.
 3. Ative `PixGo Payments WC`.
-4. Abra `Configuracoes > PixGo Payments WC` para conferir o status.
+4. Abra `PSILOSHOP > PixGo Payments WC` para conferir o status.
 5. Configure as chaves em `WooCommerce > Configuracoes > Pagamentos > PixGo PIX`.
 6. Ative o gateway somente quando as credenciais estiverem prontas.

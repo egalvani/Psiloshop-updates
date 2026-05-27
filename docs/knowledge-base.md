@@ -2,7 +2,7 @@
 
 ## Contexto
 
-Este workspace consolida o checkout PixGo criado na conversa anterior. A versao mais recente e `pixgo-payments-wc`, empacotada como `pixgo-payments-wc-1.1.3.zip`.
+Este workspace consolida o checkout PixGo criado na conversa anterior. A versao mais recente e `pixgo-payments-wc`, empacotada como `pixgo-payments-wc-1.1.7.zip`.
 
 O objetivo do plugin e adicionar um gateway PIX PixGo ao WooCommerce para a Psiloshop, com geracao de QR Code, codigo PIX copia e cola, tela de obrigado customizavel e confirmacao automatica por webhook.
 
@@ -11,7 +11,7 @@ O objetivo do plugin e adicionar um gateway PIX PixGo ao WooCommerce para a Psil
 - Nome do plugin: `PixGo Payments WC`
 - Slug/text domain: `pixgo-payments-wc`
 - Gateway WooCommerce: `pixgo_payments_wc`
-- Versao: `1.1.3`
+- Versao: `1.1.7`
 - Requisitos: WordPress 6.0+, PHP 7.4+, WooCommerce ativo
 - API base: `https://pixgo.org/api/v1`
 
@@ -79,7 +79,7 @@ O plugin pode usar layout nativo ou uma pagina editavel.
 Menu:
 
 ```text
-Configuracoes > PixGo Payments WC > Telas
+PSILOSHOP > PixGo Payments WC > Telas
 ```
 
 Shortcodes disponiveis:
@@ -110,18 +110,18 @@ O arquivo `assets/css/frontend.css` estiliza a area de pagamento PIX na pagina d
 Menu:
 
 ```text
-Configuracoes > PixGo Payments WC > Alerta PIX
+PSILOSHOP > PixGo Payments WC > Alerta PIX
 ```
 
 Permite editar o titulo, a mensagem e o botao do modal exibido quando o cliente chega na tela do QR Code. O objetivo e tranquilizar o cliente caso algum banco digital mostre alerta preventivo de fraude por falso positivo.
 
 ## Admin
 
-O arquivo `assets/css/admin.css` estiliza a pagina de status/configuracao em `Configuracoes > PixGo Payments WC`.
+O arquivo `assets/css/admin.css` estiliza a pagina de status/configuracao em `PSILOSHOP > PixGo Payments WC`.
 
 ## Decisoes preservadas
 
-- A versao ativa e `pixgo-payments-wc` 1.1.3.
+- A versao ativa e `pixgo-payments-wc` 1.1.7.
 - As iteracoes antigas foram preservadas em `archive/iterations/`, nao descartadas.
 - O ZIP instalavel principal foi separado em `packages/`.
 - O preview HTML foi mantido em `previews/` para revisao visual rapida.

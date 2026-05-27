@@ -15,7 +15,7 @@ C:\Users\Cubes\Documents\Checkout Psiloshop PixGo
 ## Principal
 
 - `plugin/pixgo-payments-wc/`
-- `packages/pixgo-payments-wc-1.1.3.zip`
+- `packages/pixgo-payments-wc-1.1.7.zip`
 
 ## Preview
 
@@ -41,6 +41,7 @@ C:\Users\Cubes\Documents\Checkout Psiloshop PixGo
 - `plugin/pixgo-payments-wc/includes/class-pixgo-payments-wc-gateway.php`
 - `plugin/pixgo-payments-wc/includes/class-pixgo-payments-wc-templates.php`
 - `plugin/pixgo-payments-wc/includes/class-pixgo-payments-wc-webhook.php`
+- `plugin/pixgo-payments-wc/includes/class-psiloshop-github-plugin-updater.php`
 - `plugin/pixgo-payments-wc/assets/css/admin.css`
 - `plugin/pixgo-payments-wc/assets/css/frontend.css`
 - `plugin/pixgo-payments-wc/assets/js/frontend.js`

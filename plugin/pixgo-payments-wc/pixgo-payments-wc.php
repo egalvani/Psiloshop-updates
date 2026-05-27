@@ -3,7 +3,7 @@
  * Plugin Name: PixGo Payments WC
  * Plugin URI: https://pixgo.org/
  * Description: PixGo PIX gateway for WooCommerce with QR Code, copy and paste code, and signed webhooks.
- * Version: 1.1.3
+ * Version: 1.1.7
  * Author: PixGo Integration
  * Requires at least: 6.0
  * Requires PHP: 7.4
@@ -17,14 +17,23 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'PIXGO_PAYMENTS_WC_VERSION', '1.1.3' );
+define( 'PIXGO_PAYMENTS_WC_VERSION', '1.1.7' );
 define( 'PIXGO_PAYMENTS_WC_FILE', __FILE__ );
 define( 'PIXGO_PAYMENTS_WC_PATH', plugin_dir_path( __FILE__ ) );
 define( 'PIXGO_PAYMENTS_WC_URL', plugin_dir_url( __FILE__ ) );
 
+require_once PIXGO_PAYMENTS_WC_PATH . 'includes/class-psiloshop-github-plugin-updater.php';
+
+new Psiloshop_GitHub_Plugin_Updater(
+	PIXGO_PAYMENTS_WC_FILE,
+	PIXGO_PAYMENTS_WC_VERSION,
+	'https://raw.githubusercontent.com/egalvani/Psiloshop-updates/main/updates/pixgo-payments-wc.json'
+);
+
 add_action( 'before_woocommerce_init', 'pixgo_payments_wc_declare_wc_compatibility' );
 add_action( 'plugins_loaded', 'pixgo_payments_wc_load', 11 );
 add_action( 'admin_menu', 'pixgo_payments_wc_setup_menu' );
+add_action( 'admin_menu', 'pixgo_payments_wc_remove_duplicate_menu', 99 );
 add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), 'pixgo_payments_wc_action_links' );
 
 /**
@@ -98,7 +107,7 @@ function pixgo_payments_wc_add_gateway( $gateways ) {
  * @return array
  */
 function pixgo_payments_wc_action_links( $links ) {
-	$setup_url    = admin_url( 'options-general.php?page=pixgo-payments-wc' );
+	$setup_url    = admin_url( 'admin.php?page=pixgo-payments-wc' );
 	$settings_url = admin_url( 'admin.php?page=wc-settings&tab=checkout&section=pixgo_payments_wc' );
 
 	array_unshift(
@@ -111,23 +120,41 @@ function pixgo_payments_wc_action_links( $links ) {
 }
 
 /**
- * Adds setup page under Settings.
+ * Adds setup page under the Psiloshop menu.
  */
 function pixgo_payments_wc_setup_menu() {
-	add_options_page(
+	add_menu_page(
+		'PSILOSHOP',
+		'PSILOSHOP',
+		'manage_woocommerce',
+		'psiloshop',
+		'pixgo_payments_wc_render_setup_page',
+		'dashicons-store',
+		56
+	);
+
+	add_submenu_page(
+		'psiloshop',
 		'PixGo Payments WC',
 		'PixGo Payments WC',
-		'manage_options',
+		'manage_woocommerce',
 		'pixgo-payments-wc',
 		'pixgo_payments_wc_render_setup_page'
 	);
 }
 
 /**
+ * Removes the duplicate submenu automatically created for the top-level menu.
+ */
+function pixgo_payments_wc_remove_duplicate_menu() {
+	remove_submenu_page( 'psiloshop', 'psiloshop' );
+}
+
+/**
  * Renders setup page.
  */
 function pixgo_payments_wc_render_setup_page() {
-	if ( ! current_user_can( 'manage_options' ) ) {
+	if ( ! current_user_can( 'manage_woocommerce' ) ) {
 		wp_die( esc_html__( 'You do not have permission to access this page.', 'pixgo-payments-wc' ) );
 	}
 
@@ -144,9 +171,9 @@ function pixgo_payments_wc_render_setup_page() {
 	echo '<div class="wrap pixgo-payments-wc-setup">';
 	echo '<h1>PixGo Payments WC</h1>';
 	echo '<nav class="nav-tab-wrapper">';
-	echo '<a class="nav-tab ' . esc_attr( 'status' === $tab ? 'nav-tab-active' : '' ) . '" href="' . esc_url( admin_url( 'options-general.php?page=pixgo-payments-wc&tab=status' ) ) . '">' . esc_html__( 'Status', 'pixgo-payments-wc' ) . '</a>';
-	echo '<a class="nav-tab ' . esc_attr( 'telas' === $tab ? 'nav-tab-active' : '' ) . '" href="' . esc_url( admin_url( 'options-general.php?page=pixgo-payments-wc&tab=telas' ) ) . '">' . esc_html__( 'Telas', 'pixgo-payments-wc' ) . '</a>';
-	echo '<a class="nav-tab ' . esc_attr( 'alerta' === $tab ? 'nav-tab-active' : '' ) . '" href="' . esc_url( admin_url( 'options-general.php?page=pixgo-payments-wc&tab=alerta' ) ) . '">' . esc_html__( 'Alerta PIX', 'pixgo-payments-wc' ) . '</a>';
+	echo '<a class="nav-tab ' . esc_attr( 'status' === $tab ? 'nav-tab-active' : '' ) . '" href="' . esc_url( admin_url( 'admin.php?page=pixgo-payments-wc&tab=status' ) ) . '">' . esc_html__( 'Status', 'pixgo-payments-wc' ) . '</a>';
+	echo '<a class="nav-tab ' . esc_attr( 'telas' === $tab ? 'nav-tab-active' : '' ) . '" href="' . esc_url( admin_url( 'admin.php?page=pixgo-payments-wc&tab=telas' ) ) . '">' . esc_html__( 'Telas', 'pixgo-payments-wc' ) . '</a>';
+	echo '<a class="nav-tab ' . esc_attr( 'alerta' === $tab ? 'nav-tab-active' : '' ) . '" href="' . esc_url( admin_url( 'admin.php?page=pixgo-payments-wc&tab=alerta' ) ) . '">' . esc_html__( 'Alerta PIX', 'pixgo-payments-wc' ) . '</a>';
 	echo '</nav>';
 
 	if ( 'alerta' === $tab ) {
@@ -283,7 +310,7 @@ function pixgo_payments_wc_render_alert_modal() {
  * Saves editable PixGo alert settings.
  */
 function pixgo_payments_wc_save_alert_settings_action() {
-	if ( ! current_user_can( 'manage_options' ) || ! check_admin_referer( 'pixgo_payments_wc_save_alert_settings' ) ) {
+	if ( ! current_user_can( 'manage_woocommerce' ) || ! check_admin_referer( 'pixgo_payments_wc_save_alert_settings' ) ) {
 		wp_die( esc_html__( 'You do not have permission to perform this action.', 'pixgo-payments-wc' ) );
 	}
 
@@ -302,7 +329,7 @@ function pixgo_payments_wc_save_alert_settings_action() {
 	}
 
 	update_option( 'pixgo_payments_wc_alert_settings', $settings );
-	wp_safe_redirect( admin_url( 'options-general.php?page=pixgo-payments-wc&tab=alerta&saved=1' ) );
+	wp_safe_redirect( admin_url( 'admin.php?page=pixgo-payments-wc&tab=alerta&saved=1' ) );
 	exit;
 }
 
@@ -310,14 +337,14 @@ function pixgo_payments_wc_save_alert_settings_action() {
  * Creates a default Elementor-editable PixGo page.
  */
 function pixgo_payments_wc_create_template_action() {
-	if ( ! current_user_can( 'manage_options' ) || ! check_admin_referer( 'pixgo_payments_wc_create_template' ) ) {
+	if ( ! current_user_can( 'manage_woocommerce' ) || ! check_admin_referer( 'pixgo_payments_wc_create_template' ) ) {
 		wp_die( esc_html__( 'You do not have permission to perform this action.', 'pixgo-payments-wc' ) );
 	}
 
 	$page_id = Pixgo_Payments_WC_Templates::create_default_page();
 	update_option( 'pixgo_payments_wc_template_page_id', absint( $page_id ) );
 
-	wp_safe_redirect( admin_url( 'options-general.php?page=pixgo-payments-wc&tab=telas&created=1' ) );
+	wp_safe_redirect( admin_url( 'admin.php?page=pixgo-payments-wc&tab=telas&created=1' ) );
 	exit;
 }
 
@@ -325,14 +352,14 @@ function pixgo_payments_wc_create_template_action() {
  * Saves template settings.
  */
 function pixgo_payments_wc_save_template_settings_action() {
-	if ( ! current_user_can( 'manage_options' ) || ! check_admin_referer( 'pixgo_payments_wc_save_template_settings' ) ) {
+	if ( ! current_user_can( 'manage_woocommerce' ) || ! check_admin_referer( 'pixgo_payments_wc_save_template_settings' ) ) {
 		wp_die( esc_html__( 'You do not have permission to perform this action.', 'pixgo-payments-wc' ) );
 	}
 
 	$template_page_id = isset( $_POST['template_page_id'] ) ? absint( wp_unslash( $_POST['template_page_id'] ) ) : 0;
 	update_option( 'pixgo_payments_wc_template_page_id', $template_page_id );
 
-	wp_safe_redirect( admin_url( 'options-general.php?page=pixgo-payments-wc&tab=telas&saved=1' ) );
+	wp_safe_redirect( admin_url( 'admin.php?page=pixgo-payments-wc&tab=telas&saved=1' ) );
 	exit;
 }
 
@@ -383,7 +410,7 @@ function pixgo_payments_wc_frontend_assets() {
  * @param string $hook_suffix Current admin page hook.
  */
 function pixgo_payments_wc_admin_assets( $hook_suffix ) {
-	if ( 'settings_page_pixgo-payments-wc' === $hook_suffix || 'woocommerce_page_wc-settings' === $hook_suffix ) {
+	if ( 'psiloshop_page_pixgo-payments-wc' === $hook_suffix || 'toplevel_page_psiloshop' === $hook_suffix || 'settings_page_pixgo-payments-wc' === $hook_suffix || 'woocommerce_page_wc-settings' === $hook_suffix ) {
 		wp_enqueue_style( 'pixgo-payments-wc-admin', PIXGO_PAYMENTS_WC_URL . 'assets/css/admin.css', array(), PIXGO_PAYMENTS_WC_VERSION );
 	}
 }
