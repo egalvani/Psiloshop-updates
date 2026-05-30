@@ -1,15 +1,15 @@
 {
   "name": "Woo WhatsApp Notifications",
   "slug": "woo-whatsapp-notifications",
-  "version": "1.0.64",
+  "version": "1.0.65",
   "author": "Codex",
   "homepage": "https://github.com/egalvani/Psiloshop",
   "requires": "6.0",
   "tested": "6.8",
   "requires_php": "7.4",
-  "download_url": "https://github.com/egalvani/Psiloshop-updates/releases/download/woo-whatsapp-notifications-1.0.64/woo-whatsapp-notifications-1.0.64.zip",
+  "download_url": "https://github.com/egalvani/Psiloshop-updates/releases/download/woo-whatsapp-notifications-1.0.65/woo-whatsapp-notifications-1.0.65.zip",
   "sections": {
     "description": "Ponte WooCommerce para o PsiloChatBot, com endpoint seguro de consulta de pedidos e compatibilidade com recursos legados.",
-    "changelog": "Adiciona consulta completa de pedidos para PsiloChatBot, com busca por pedido, e-mail ou telefone e retorno de rastreio, pagamento, produtos e dados do cliente."
+    "changelog": "Corrige atualizacao em instalacoes onde a pasta local do plugin tem nome diferente e mantem a consulta completa de pedidos para o PsiloChatBot."
   }
 }
