@@ -1,0 +1,15 @@
+{
+  "name": "Psiloshop Codex Bridge",
+  "slug": "psiloshop-codex-bridge",
+  "version": "1.0.14",
+  "author": "Codex",
+  "homepage": "https://github.com/egalvani/Psiloshop",
+  "requires": "6.0",
+  "tested": "7.0",
+  "requires_php": "7.4",
+  "download_url": "https://github.com/egalvani/Psiloshop-updates/releases/download/psiloshop-codex-bridge-1.0.14/contactassist-bridge-1.0.14.zip",
+  "sections": {
+    "description": "Ponte segura entre ContactAssist, WordPress e WooCommerce para pedidos, analytics, frete, carrinho abandonado e operacoes comerciais.",
+    "changelog": "Adiciona leitura detalhada do CartFlows Cart Abandonment Recovery: cliente, telefone, e-mail, produtos, valor, status, data e link de recuperacao quando disponiveis."
+  }
+}
