@@ -1,15 +1,15 @@
 {
   "name": "Psiloshop Codex Bridge",
   "slug": "psiloshop-codex-bridge",
-  "version": "1.0.16",
+  "version": "1.0.19",
   "author": "Codex",
   "homepage": "https://github.com/egalvani/Psiloshop",
   "requires": "6.0",
   "tested": "7.0",
   "requires_php": "7.4",
-  "download_url": "https://github.com/egalvani/Psiloshop-updates/releases/download/psiloshop-codex-bridge-1.0.16/contactassist-bridge-1.0.16.zip",
+  "download_url": "https://github.com/egalvani/Psiloshop-updates/releases/download/psiloshop-codex-bridge-1.0.19/contactassist-bridge-1.0.19.zip",
   "sections": {
     "description": "Ponte segura entre ContactAssist, WordPress e WooCommerce para pedidos, analytics, frete, carrinho abandonado e operacoes comerciais.",
-    "changelog": "Corrige captura de carrinho abandonado em checkout moderno: carrega o tracker mesmo quando o carrinho server-side nao esta disponivel no enqueue, usa dados do cliente WooCommerce como fallback e observa campos dinamicos de checkout."
+    "changelog": "Adiciona atualizacao remota segura pelo ContactAssist, com endpoint protegido por token de escrita e pacote validado por origem permitida."
   }
 }
