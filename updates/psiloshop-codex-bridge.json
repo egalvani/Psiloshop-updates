@@ -1,15 +1,15 @@
 {
   "name": "Psiloshop Codex Bridge",
   "slug": "psiloshop-codex-bridge",
-  "version": "1.0.19",
+  "version": "1.0.22",
   "author": "Codex",
   "homepage": "https://github.com/egalvani/Psiloshop",
   "requires": "6.0",
   "tested": "7.0",
   "requires_php": "7.4",
-  "download_url": "https://github.com/egalvani/Psiloshop-updates/releases/download/psiloshop-codex-bridge-1.0.19/contactassist-bridge-1.0.19.zip",
+  "download_url": "https://github.com/egalvani/Psiloshop-updates/releases/download/psiloshop-codex-bridge-1.0.22/contactassist-bridge-1.0.22.zip",
   "sections": {
     "description": "Ponte segura entre ContactAssist, WordPress e WooCommerce para pedidos, analytics, frete, carrinho abandonado e operacoes comerciais.",
-    "changelog": "Adiciona atualizacao remota segura pelo ContactAssist, com endpoint protegido por token de escrita e pacote validado por origem permitida."
+    "changelog": "Mantem a atualizacao remota segura, informa a versao do Bridge nas rotas de diagnostico e reforca a reativacao do plugin depois da atualizacao automatica."
   }
 }
