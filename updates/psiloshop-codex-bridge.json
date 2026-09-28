@@ -1,15 +1,15 @@
 {
   "name": "Psiloshop Codex Bridge",
   "slug": "psiloshop-codex-bridge",
-  "version": "1.0.35",
+  "version": "1.0.36",
   "author": "Codex",
   "homepage": "https://github.com/egalvani/Psiloshop",
   "requires": "6.0",
   "tested": "7.0",
   "requires_php": "7.4",
-  "download_url": "https://github.com/egalvani/Psiloshop-updates/releases/download/psiloshop-codex-bridge-1.0.35/contactassist-bridge-1.0.35.zip",
+  "download_url": "https://github.com/egalvani/Psiloshop-updates/releases/download/psiloshop-codex-bridge-1.0.36/contactassist-bridge-1.0.36.zip",
   "sections": {
     "description": "Ponte segura entre ContactAssist, WordPress e WooCommerce para pedidos, analytics, frete, carrinho abandonado e operacoes comerciais.",
-    "changelog": "WooCommerce: toda mudanca relevante de status agora e publicada pelo hook global, incluindo transicoes manuais para Processando. Eventos duplicados no mesmo request sao bloqueados."
+    "changelog": "WooCommerce em tempo real: rele cada pedido diretamente do data store antes de devolver status, pagamento e datas. O ContactAssist ignora cache de status e nao usa resposta antiga no dashboard."
   }
 }
